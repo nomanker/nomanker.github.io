@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16332675317351633267531725.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="nomanker">
+  <meta name="keywords" content="">
+  
+  <title>nomanker&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>nomanker's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16333458334020197ce5b3c0e28a80121b994d6481a.jpg@1280w_1l_2o_100sh.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-03-14 12:58" pubdate>
+        2022年3月14日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      52
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            <div class="markdown-body">
+              <h1 id="课设内容"><a href="#课设内容" class="headerlink" title="课设内容"></a>课设内容</h1><h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p> 在32位的虚拟机boches虚拟机上面编译lunix0.11的源代码并且运行，完成whoami和iam的系统调用。以及对lunix进程调度进行日志打印，利用python脚本对日志文件进行处理，并展示linux0.11从系统初始化到调取终端shell各进程的状态转换。</p>
+<h3 id="进程日志监测"><a href="#进程日志监测" class="headerlink" title="进程日志监测"></a>进程日志监测</h3><h4 id="提前打开log文件"><a href="#提前打开log文件" class="headerlink" title="提前打开log文件"></a>提前打开log文件</h4><p>为了能尽早开始记录，应当在内核启动时就打开 log 文件。内核的入口是 init/main.c 中的 main()。细节在main()的一端代码中：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//……</span><br>move_to_user_mode();<br><span class="hljs-keyword">if</span> (!fork()) &#123;        <span class="hljs-comment">/* we count on this going ok */</span><br>    init();<br>&#125;<br><span class="hljs-comment">//……</span><br></code></pre></td></tr></table></figure>
+<p>此段代码在进程0中运行，切换到用户态，然后系统通过调用fork()创建进程1，进程1调用init（）仅从初始化，在 init() 当中，我们可以观察到如下主要代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// ……</span><br><span class="hljs-comment">//加载文件系统</span><br>setup((<span class="hljs-keyword">void</span> *) &amp;drive_info);    <br><br><span class="hljs-comment">// 打开/dev/tty0，建立文件描述符0和/dev/tty0的关联</span><br>(<span class="hljs-keyword">void</span>) open(<span class="hljs-string">&quot;/dev/tty0&quot;</span>,O_RDWR,<span class="hljs-number">0</span>);<br><br><span class="hljs-comment">// 让文件描述符1也和/dev/tty0关联</span><br>(<span class="hljs-keyword">void</span>) dup(<span class="hljs-number">0</span>);<br><br><span class="hljs-comment">// 让文件描述符2也和/dev/tty0关联</span><br>(<span class="hljs-keyword">void</span>) dup(<span class="hljs-number">0</span>);<br><br><span class="hljs-comment">// ……</span><br><br></code></pre></td></tr></table></figure>
+<p>  这段代码建立了文件描述符 0、1 和 2，它们分别就是 stdin、stdout 和 stderr。这三者的值是系统标准，不可改变。因此我们可以在这之后进行日志文件的建立，以便后续进程检测的日志写入。</p>
+<p>  并且问了及早地访问<code>log</code>文件，我们需要让上述代码在进程0中完成，所以将此本次代码从<code>init()</code>移动到<code>main()</code>中，放在<code>move_to_user_mode()</code>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs c"><br><span class="hljs-comment">//……</span><br>move_to_user_mode();<br><br><span class="hljs-comment">/***************添加开始***************/</span><br>setup((<span class="hljs-keyword">void</span> *) &amp;drive_info);<br><br><span class="hljs-comment">// 建立文件描述符0和/dev/tty0的关联</span><br>(<span class="hljs-keyword">void</span>) open(<span class="hljs-string">&quot;/dev/tty0&quot;</span>,O_RDWR,<span class="hljs-number">0</span>);    <br><br><span class="hljs-comment">//文件描述符1也和/dev/tty0关联</span><br>(<span class="hljs-keyword">void</span>) dup(<span class="hljs-number">0</span>);        <br><br><span class="hljs-comment">// 文件描述符2也和/dev/tty0关联</span><br>(<span class="hljs-keyword">void</span>) dup(<span class="hljs-number">0</span>);        <br><br>(<span class="hljs-keyword">void</span>) open(<span class="hljs-string">&quot;/var/process.log&quot;</span>,O_CREAT|O_TRUNC|O_WRONLY,<span class="hljs-number">0666</span>);<br><br><span class="hljs-comment">/***************添加结束***************/</span><br><br><span class="hljs-keyword">if</span> (!fork()) &#123;        <span class="hljs-comment">/* we count on this going ok */</span><br>    init();<br>&#125;<br><span class="hljs-comment">//……</span><br></code></pre></td></tr></table></figure>
+<p>  这样，文件描述符 0、1、2 和 3 就在进程 0 中建立了。根据 <code>fork()</code> 的原理，进程 1 会继承这些文件描述符，所以 <code>init()</code> 中就不必再 <code>open()</code> 它们。此后所有新建的进程都是进程 1 的子孙，也会继承它们。但实际上，<code>init()</code> 的后续代码和 <code>/bin/sh</code> 都会重新初始化它们。所以只有进程 0 和进程 1 的文件描述符肯定关联着 log 文件，这一点在接下来的写 log 中很重要。</p>
+<h4 id="写log文件"><a href="#写log文件" class="headerlink" title="写log文件"></a>写<code>log</code>文件</h4><p>在内核状态下，write() 功能失效，因此需要自己动手写相应的文件输出功能。因此需要重新编写<code>fprintk()</code>，因为该函数和 <code>printk</code> 的功能近似，因此将此函数放入到 <code>kernel/printk.c</code> 中。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;linux/sched.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;sys/stat.h&quot;</span></span><br><br><span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> logbuf[<span class="hljs-number">1024</span>];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">fprintk</span><span class="hljs-params">(<span class="hljs-keyword">int</span> fd, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *fmt, ...)</span></span><br><span class="hljs-function"></span>&#123;<br>    va_list args;<br>    <span class="hljs-keyword">int</span> count;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">file</span> * <span class="hljs-title">file</span>;</span><br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">m_inode</span> * <span class="hljs-title">inode</span>;</span><br><br>    va_start(args, fmt);<br>    count=<span class="hljs-built_in">vsprintf</span>(logbuf, fmt, args);<br>    va_end(args);<br><span class="hljs-comment">/* 如果输出到stdout或stderr，直接调用sys_write即可 */</span><br>    <span class="hljs-keyword">if</span> (fd &lt; <span class="hljs-number">3</span>)<br>    &#123;<br>        __asm__(<span class="hljs-string">&quot;push %%fs\n\t&quot;</span><br>            <span class="hljs-string">&quot;push %%ds\n\t&quot;</span><br>            <span class="hljs-string">&quot;pop %%fs\n\t&quot;</span><br>            <span class="hljs-string">&quot;pushl %0\n\t&quot;</span><br>        <span class="hljs-comment">/* 注意对于Windows环境来说，是_logbuf,下同 */</span><br>            <span class="hljs-string">&quot;pushl $logbuf\n\t&quot;</span> <br>            <span class="hljs-string">&quot;pushl %1\n\t&quot;</span><br>        <span class="hljs-comment">/* 注意对于Windows环境来说，是_sys_write,下同 */</span><br>            <span class="hljs-string">&quot;call sys_write\n\t&quot;</span> <br>            <span class="hljs-string">&quot;addl $8,%%esp\n\t&quot;</span><br>            <span class="hljs-string">&quot;popl %0\n\t&quot;</span><br>            <span class="hljs-string">&quot;pop %%fs&quot;</span><br>            ::<span class="hljs-string">&quot;r&quot;</span> (count),<span class="hljs-string">&quot;r&quot;</span> (fd):<span class="hljs-string">&quot;ax&quot;</span>,<span class="hljs-string">&quot;cx&quot;</span>,<span class="hljs-string">&quot;dx&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">else</span>    <br><span class="hljs-comment">/* 假定&gt;=3的描述符都与文件关联。事实上，还存在很多其它情况，这里并没有考虑。*/</span><br>    &#123;<br>    <span class="hljs-comment">/* 从进程0的文件描述符表中得到文件句柄 */</span><br>        <span class="hljs-keyword">if</span> (!(file=task[<span class="hljs-number">0</span>]-&gt;filp[fd]))    <br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        inode=file-&gt;f_inode;<br><br>        __asm__(<span class="hljs-string">&quot;push %%fs\n\t&quot;</span><br>            <span class="hljs-string">&quot;push %%ds\n\t&quot;</span><br>            <span class="hljs-string">&quot;pop %%fs\n\t&quot;</span><br>            <span class="hljs-string">&quot;pushl %0\n\t&quot;</span><br>            <span class="hljs-string">&quot;pushl $logbuf\n\t&quot;</span><br>            <span class="hljs-string">&quot;pushl %1\n\t&quot;</span><br>            <span class="hljs-string">&quot;pushl %2\n\t&quot;</span><br>            <span class="hljs-string">&quot;call file_write\n\t&quot;</span><br>            <span class="hljs-string">&quot;addl $12,%%esp\n\t&quot;</span><br>            <span class="hljs-string">&quot;popl %0\n\t&quot;</span><br>            <span class="hljs-string">&quot;pop %%fs&quot;</span><br>            ::<span class="hljs-string">&quot;r&quot;</span> (count),<span class="hljs-string">&quot;r&quot;</span> (file),<span class="hljs-string">&quot;r&quot;</span> (inode):<span class="hljs-string">&quot;ax&quot;</span>,<span class="hljs-string">&quot;cx&quot;</span>,<span class="hljs-string">&quot;dx&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> count;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<p><code>fprintk()</code>主要函数功能如下，传入文件描述符，进程当前<code>pid</code>和滴答数。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 向log文件输出跟踪进程运行轨迹</span><br>fprintk(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;%ld\t%c\t%ld\n&quot;</span>, current-&gt;pid, <span class="hljs-string">&#x27;R&#x27;</span>, jiffies); <br></code></pre></td></tr></table></figure>
+<p>jiffies 表示从开机时到现在发生的时钟中断次数，这个数也被称为 “滴答数”。由代码知，jiffies 实际上记录了从开机以来共经过了多少个 10ms(1/100秒)。</p>
+<h4 id="寻找状态切换点"><a href="#寻找状态切换点" class="headerlink" title="寻找状态切换点"></a>寻找状态切换点</h4><p>状态切换点主要集中在kernel 下的<code>fork.c</code>,<code>shed.c</code>和<code>exit.c</code>当中。</p>
+<p>在linux 0.11中进程状态其实只有就绪（运行）、等待、退出，处于就绪态的进程一旦得到CPU就进入到运行态。这也是系统调度的基础，就是看所有就绪态的进程哪个应该被运行（看时间片）。生成的进程状态有两种改变情形，一种是被抢占（时间片调度），一种是主动让出（等待）。其中抢占只发生在调度时，等待则有以下几种情形，sys_pause（主动暂停），sys_waitpid（等待子进程结束），sleep_on（睡眠）以及不可中断睡眠，而睡眠的进程被唤醒则有主动唤醒及信号唤醒。被唤醒的进程则参与调度，会再一次使用CPU。进程运行结束或被手工杀死后，进程状态会变为僵尸进程，会在调度过程中被释放。</p>
+<h5 id="记录一个进程生命周期的开始"><a href="#记录一个进程生命周期的开始" class="headerlink" title="记录一个进程生命周期的开始"></a>记录一个进程生命周期的开始</h5><p>  上文中，我们提到了进程的开始是由<code>fork()</code> 函数执行，在linux 0.11当中，fork() 功能在内核中的实现为 <code>sys_fork()</code>,该函数在文件 <code>kernel/system_call.s</code>当中的实现为:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">sys_fork:<br>call find_empty_process<br>!    ……<br>! 传递一些参数<br>push %gs<br>pushl %esi<br>pushl %edi<br>pushl %ebp<br>pushl %eax<br>! 调用 copy_process 实现进程创建<br>call copy_process <br>addl <span class="hljs-variable">$20</span>,%esp<br></code></pre></td></tr></table></figure>
+<p>因此真正实现进程创建的函数<code>是copy_process()</code>，它在<code>kernel/fork.c</code>进行实现，我们需要在<code>fork.c</code>函数中仅从相应的日志输出。</p>
+<p>在copy_process() 中完成了对应的进程创建和将进程送入就绪队列当中，因为我们仅需进行如下操作：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sleep_on</span><span class="hljs-params">(struct task_struct **p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">task_struct</span> *<span class="hljs-title">tmp</span>;</span><br><span class="hljs-comment">//    ……</span><br>    tmp = *p;<br><span class="hljs-comment">// 仔细阅读，实际上是将 current 插入“等待队列”头部，tmp 是原来的头部</span><br>    *p = current;  <br><span class="hljs-comment">// 切换到睡眠态</span><br>    current-&gt;state = TASK_UNINTERRUPTIBLE; <br><span class="hljs-comment">//  @yyf change</span><br>    <span class="hljs-built_in">fprintk</span>(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;%ld\t%c\t%ld\n&quot;</span>, current-&gt;pid, <span class="hljs-string">&#x27;W&#x27;</span>, jiffies); <br><span class="hljs-comment">// 让出 CPU</span><br>    <span class="hljs-built_in">schedule</span>();  <br><span class="hljs-comment">// 唤醒队列中的上一个（tmp）睡眠进程。0 换作 TASK_RUNNING 更好</span><br><span class="hljs-comment">// 在记录进程被唤醒时一定要考虑到这种情况，实验者一定要注意!!!</span><br>    <span class="hljs-keyword">if</span> (tmp)&#123;<br>        tmp-&gt;state=<span class="hljs-number">0</span>;<br>     <span class="hljs-comment">//  @yyf change</span><br>     <span class="hljs-built_in">fprintk</span>(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;%ld\t%c\t%ld\n&quot;</span>, tmp-&gt;pid, <span class="hljs-string">&#x27;J&#x27;</span>, jiffies); &#125;<br>&#125;<br><span class="hljs-comment">/* TASK_UNINTERRUPTIBLE和TASK_INTERRUPTIBLE的区别在于不可中断的睡眠</span><br><span class="hljs-comment"> * 只能由wake_up()显式唤醒，再由上面的 schedule()语句后的</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> *   if (tmp) tmp-&gt;state=0;</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * 依次唤醒，所以不可中断的睡眠进程一定是按严格从“队列”（一个依靠</span><br><span class="hljs-comment"> * 放在进程内核栈中的指针变量tmp维护的队列）的首部进行唤醒。而对于可</span><br><span class="hljs-comment"> * 中断的进程，除了用wake_up唤醒以外，也可以用信号（给进程发送一个信</span><br><span class="hljs-comment"> * 号，实际上就是将进程PCB中维护的一个向量的某一位置位，进程需要在合</span><br><span class="hljs-comment"> * 适的时候处理这一位。感兴趣的实验者可以阅读有关代码）来唤醒，如在</span><br><span class="hljs-comment"> * schedule()中：</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> *  for(p = &amp;LAST_TASK ; p &gt; &amp;FIRST_TASK ; --p)</span><br><span class="hljs-comment"> *      if (((*p)-&gt;signal &amp; ~(_BLOCKABLE &amp; (*p)-&gt;blocked)) &amp;&amp;</span><br><span class="hljs-comment"> *         (*p)-&gt;state==TASK_INTERRUPTIBLE)</span><br><span class="hljs-comment"> *         (*p)-&gt;state=TASK_RUNNING;//唤醒</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * 就是当进程是可中断睡眠时，如果遇到一些信号就将其唤醒。这样的唤醒会</span><br><span class="hljs-comment"> * 出现一个问题，那就是可能会唤醒等待队列中间的某个进程，此时这个链就</span><br><span class="hljs-comment"> * 需要进行适当调整。interruptible_sleep_on和sleep_on函数的主要区别就</span><br><span class="hljs-comment"> * 在这里。</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">interruptible_sleep_on</span><span class="hljs-params">(struct task_struct **p)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">task_struct</span> *<span class="hljs-title">tmp</span>;</span><br>       …<br>    tmp=*p;<br>    *p=current;<br>repeat:<br>    current-&gt;state = TASK_INTERRUPTIBLE;<br>    <span class="hljs-comment">//0号进程是守护进程，cpu空闲的时候一直在waiting，进程切换为W</span><br>    <span class="hljs-comment">//0号进程是wait状态，所以不用检查0h</span><br>    <span class="hljs-keyword">if</span>(current-&gt;pid != <span class="hljs-number">0</span>)<br>    <span class="hljs-built_in">fprintk</span>(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;%ld\t%c\t%ld\n&quot;</span>, current-&gt;pid, <span class="hljs-string">&#x27;W&#x27;</span>, jiffies); <br>    <span class="hljs-built_in">schedule</span>();<br>    <span class="hljs-comment">// 如果队列头进程和刚唤醒的进程 current 不是一个，</span><br>    <span class="hljs-comment">// 说明从队列中间唤醒了一个进程，需要处理</span><br>    <span class="hljs-keyword">if</span> (*p &amp;&amp; *p != current) &#123; <br>    <span class="hljs-comment">// 将队列头唤醒，并通过 goto repeat 让自己再去睡眠</span><br>        (**p).state=<span class="hljs-number">0</span>;<br>        <span class="hljs-comment">//  @yyf change</span><br>        <span class="hljs-built_in">fprintk</span>(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;%ld\t%c\t%ld\n&quot;</span>, (*p)-&gt;pid, <span class="hljs-string">&#x27;J&#x27;</span>, jiffies); <br>        <span class="hljs-keyword">goto</span> repeat;<br>    &#125;<br>    *p=<span class="hljs-literal">NULL</span>;<br>    <span class="hljs-comment">//作用和 sleep_on 函数中的一样</span><br>    <span class="hljs-keyword">if</span> (tmp)&#123;<br>        tmp-&gt;state=<span class="hljs-number">0</span>;<br>     <span class="hljs-comment">//进程转为就绪态</span><br>     <span class="hljs-built_in">fprintk</span>(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;%ld\t%c\t%ld\n&quot;</span>, tmp-&gt;pid, <span class="hljs-string">&#x27;J&#x27;</span>, jiffies); &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sys_pause</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>&#123;<br>    current-&gt;state = TASK_INTERRUPTIBLE;<br>    <span class="hljs-comment">//进程转为等待状态</span><br>    <span class="hljs-keyword">if</span>(current-&gt;pid != <span class="hljs-number">0</span>)<br>        <span class="hljs-built_in">fprintk</span>(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;%ld\t%c\t%ld\n&quot;</span>, current-&gt;pid, <span class="hljs-string">&#x27;W&#x27;</span>, jiffies);<br>    <span class="hljs-built_in">schedule</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-comment">//exit.c中</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sys_waitpid</span><span class="hljs-params">(<span class="hljs-keyword">pid_t</span> pid,<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> * stat_addr, <span class="hljs-keyword">int</span> options)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> flag, code;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">task_struct</span> ** <span class="hljs-title">p</span>;</span><br>    <span class="hljs-built_in">verify_area</span>(stat_addr,<span class="hljs-number">4</span>);<br>repeat:<br>    flag=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(p = &amp;LAST_TASK ; p &gt; &amp;FIRST_TASK ; --p) &#123;<br>        <span class="hljs-keyword">if</span> (!*p || *p == current)<br>            <span class="hljs-keyword">continue</span>;<br>    <span class="hljs-keyword">if</span> ((*p)-&gt;father != current-&gt;pid)<br>   			<span class="hljs-keyword">continue</span>;<br>  	<span class="hljs-keyword">if</span> (pid&gt;<span class="hljs-number">0</span>) &#123;<br>   		<span class="hljs-keyword">if</span> ((*p)-&gt;pid != pid)<br>    	<span class="hljs-keyword">continue</span>;<br>  	&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!pid) &#123;<br>   		<span class="hljs-keyword">if</span> ((*p)-&gt;pgrp != current-&gt;pgrp)<br>    	<span class="hljs-keyword">continue</span>;<br>  	&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (pid != <span class="hljs-number">-1</span>) &#123;<br>   	<span class="hljs-keyword">if</span> ((*p)-&gt;pgrp != -pid)<br>    	<span class="hljs-keyword">continue</span>;<br>  	&#125;<br>  	<span class="hljs-built_in"><span class="hljs-keyword">switch</span></span> ((*p)-&gt;state) &#123;<br>   		<span class="hljs-keyword">case</span> TASK_STOPPED:<br>    		<span class="hljs-keyword">if</span> (!(options &amp; WUNTRACED))<br>     		<span class="hljs-keyword">continue</span>;<br>    		<span class="hljs-built_in">put_fs_long</span>(<span class="hljs-number">0x7f</span>,stat_addr);<br>    		<span class="hljs-keyword">return</span> (*p)-&gt;pid;<br>   		<span class="hljs-keyword">case</span> TASK_ZOMBIE:<br>    		current-&gt;cutime += (*p)-&gt;utime;<br>    		current-&gt;cstime += (*p)-&gt;stime;<br>    		flag = (*p)-&gt;pid;<br>    		code = (*p)-&gt;exit_code;<br>    		<span class="hljs-built_in">release</span>(*p);<br>    		<span class="hljs-built_in">put_fs_long</span>(code,stat_addr);<br>    		<span class="hljs-keyword">return</span> flag;<br>   		<span class="hljs-keyword">default</span>:<br>    		flag=<span class="hljs-number">1</span>;<br>    		<span class="hljs-keyword">continue</span>;<br>  &#125;<br> &#125;<br> <span class="hljs-keyword">if</span> (flag) &#123;<br>  <span class="hljs-keyword">if</span> (options &amp; WNOHANG)<br>   <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>  current-&gt;state=TASK_INTERRUPTIBLE;<br>        <span class="hljs-comment">//  @yyf change</span><br>        <span class="hljs-comment">/*0号进程是守护进程，cpu空闲的时候一直在waiting，输出是不会进行检查的</span><br><span class="hljs-comment">        if(current-&gt;pid != 0)</span><br><span class="hljs-comment">         fprintk(3, &quot;%ld\t%c\t%ld\n&quot;, current-&gt;pid, &#x27;W&#x27;, jiffies); </span><br><span class="hljs-comment">  schedule();</span><br><span class="hljs-comment">  if (!(current-&gt;signal &amp;= ~(1&lt;&lt;(SIGCHLD-1))))</span><br><span class="hljs-comment">   goto repeat;</span><br><span class="hljs-comment">  else</span><br><span class="hljs-comment">   return -EINTR;</span><br><span class="hljs-comment"> &#125;</span><br><span class="hljs-comment"> return -ECHILD;</span><br><span class="hljs-comment">&#125;    </span><br></code></pre></td></tr></table></figure>
+<h5 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h5><p>为所有处于TASK_RUNNING状态的进程分配CPU运行时间的管理代码。在 Linux 0.11 中采用了基于优先级排队的调度策略。</p>
+<ul>
+<li><p>TASK_RUNNING代表的状态不仅仅是运行状态，还有就绪状态。</p>
+</li>
+<li><p>算法实现的细节：</p>
+<ul>
+<li>基于优先级的排队策略。通过比较每个TASK_RUNNING任务的 运行时间 递减滴答计数 counter 的值来确定当前哪个进程运行的时间最少。 若counter=0，重新计算所有进程(包括睡眠)，<code>counter = counter / 2 + priority</code>。</li>
+<li>根据上述原则选择出一个进程，最后调用 switch_to()执行实际的进程切换操作。</li>
+</ul>
+</li>
+<li><code>schedule()</code> 找到的 <code>next</code> 进程是接下来要运行的进程。如果 <code>next</code> 恰好是当前正处于运行态的进程，<code>switch_to(next)</code> 也会被调用。这种情况下相当于当前进程的状态没有该表。如果不一样，则设置当前进程状态为就绪，将<code>next</code>进程状态设置为运行。</li>
+</ul>
+<p>具体内核代码如下所示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/* check alarm, wake up any interruptible tasks that have got a signal */</span><br><span class="hljs-keyword">for</span>(p = &amp;LAST_TASK ; p &gt; &amp;FIRST_TASK ; --p)<br>  <span class="hljs-keyword">if</span> (*p) &#123;<br>    <span class="hljs-keyword">if</span> ((*p)-&gt;alarm &amp;&amp; (*p)-&gt;alarm &lt; jiffies) &#123;<br>        (*p)-&gt;signal |= (<span class="hljs-number">1</span>&lt;&lt;(SIGALRM<span class="hljs-number">-1</span>));<br>        (*p)-&gt;alarm = <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (((*p)-&gt;signal &amp; ~(_BLOCKABLE &amp; (*p)-&gt;blocked)) &amp;&amp;<br>        (*p)-&gt;state==TASK_INTERRUPTIBLE)&#123;<br>        (*p)-&gt;state=TASK_RUNNING;<br>        fprintk(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;%ld\t%c\t%ld\n&quot;</span>, (*p)-&gt;pid, <span class="hljs-string">&#x27;J&#x27;</span>, jiffies); <br>    &#125; <br>  &#125;<br><br><span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) &#123;<br>    c = <span class="hljs-number">-1</span>; next = <span class="hljs-number">0</span>; i = NR_TASKS; p = &amp;task[NR_TASKS];<br><br>    <span class="hljs-comment">// 找到 counter 值最大的就绪态进程</span><br>    <span class="hljs-keyword">while</span> (--i) &#123;<br>        <span class="hljs-keyword">if</span> (!*--p)    <span class="hljs-keyword">continue</span>;<br>        <span class="hljs-keyword">if</span> ((*p)-&gt;state == TASK_RUNNING &amp;&amp; (*p)-&gt;counter &gt; c)<br>            c = (*p)-&gt;counter, next = i;<br>    &#125;       <br><br>    <span class="hljs-comment">//如果有 counter 值大于 0 的就绪态进程，则退出</span><br>    <span class="hljs-keyword">if</span> (c) <span class="hljs-keyword">break</span>;  <br><br>    <span class="hljs-comment">//如果没有：</span><br>    <span class="hljs-comment">//所有进程的 counter 值除以 2 衰减后再和 priority 值相加，</span><br>    <span class="hljs-comment">//产生新的时间片</span><br>    <span class="hljs-keyword">for</span>(p = &amp;LAST_TASK ; p &gt; &amp;FIRST_TASK ; --p)<br>        <span class="hljs-keyword">if</span> (*p) (*p)-&gt;counter = ((*p)-&gt;counter &gt;&gt; <span class="hljs-number">1</span>) + (*p)-&gt;priority;  <br>    &#125;<br>    <span class="hljs-comment">//切换到相同的进程不输出</span><br>    <span class="hljs-keyword">if</span>(current != task[next])&#123;<br>        <span class="hljs-keyword">if</span>(current-&gt;state == TASK_RUNNING)&#123;<br>            fprintk(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;%ld\t%c\t%ld\n&quot;</span>, current-&gt;pid, <span class="hljs-string">&#x27;J&#x27;</span>, jiffies); <br>        &#125;<br>        fprintk(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;%ld\t%c\t%ld\n&quot;</span>, task[next]-&gt;pid, <span class="hljs-string">&#x27;R&#x27;</span>, jiffies); <br>    &#125;<br>    <span class="hljs-comment">//切换到 next 进程</span><br>    switch_to(next);  <br></code></pre></td></tr></table></figure>
+<h4 id="睡眠状态到就绪状态"><a href="#睡眠状态到就绪状态" class="headerlink" title="睡眠状态到就绪状态"></a>睡眠状态到就绪状态</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">wake_up</span><span class="hljs-params">(struct task_struct **p)</span></span>&#123;<br>    <span class="hljs-keyword">if</span> (p &amp;&amp; *p) &#123;<br>        <span class="hljs-keyword">if</span>((**p).state != TASK_RUNNING)&#123;  <br>            (**p).state=TASK_RUNNING;<br>            <span class="hljs-comment">// 切换状态为就绪状态,J代表就绪状态</span><br>            fprintk(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;%ld\t%c\t%ld\n&quot;</span>, (*p)-&gt;pid, <span class="hljs-string">&#x27;J&#x27;</span>, jiffies); <br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="进程退出"><a href="#进程退出" class="headerlink" title="进程退出"></a>进程退出</h4><p>当一个进程结束了运行或在半途中终止了运行，那么内核就需要释放该进程所占用的系统资源。这包括进程运行时打开的文件、申请的内存等。</p>
+<p>当一个用户程序调用exit()系统调用时，就会执行内核函数do_exit()。该函数会首先释放进程代码段和数据段占用的内存页面，关闭进程打开着的所有文件，对进程使用的当前工作目录、根目录和运行程序的节点进行同步操作。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//改动exit.c</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">do_exit</span><span class="hljs-params">(<span class="hljs-keyword">long</span> code)</span></span>&#123;<br>    <span class="hljs-keyword">int</span> i;<br>    free_page_tables(get_base(current-&gt;ldt[<span class="hljs-number">1</span>]),get_limit(<span class="hljs-number">0x0f</span>));<br>    free_page_tables(get_base(current-&gt;ldt[<span class="hljs-number">2</span>]),get_limit(<span class="hljs-number">0x17</span>));<br>    <span class="hljs-keyword">for</span> (i=<span class="hljs-number">0</span> ; i&lt;NR_TASKS ; i++)<br>        <span class="hljs-keyword">if</span> (task[i] &amp;&amp; task[i]-&gt;father == current-&gt;pid) &#123;<br>            task[i]-&gt;father = <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span> (task[i]-&gt;state == TASK_ZOMBIE)<br>                <span class="hljs-comment">/* assumption task[1] is always init */</span><br>                (<span class="hljs-keyword">void</span>) send_sig(SIGCHLD, task[<span class="hljs-number">1</span>], <span class="hljs-number">1</span>);<br>        &#125;<br>    <span class="hljs-keyword">for</span> (i=<span class="hljs-number">0</span> ; i&lt;NR_OPEN ; i++)<br>        <span class="hljs-keyword">if</span> (current-&gt;filp[i])<br>            sys_close(i);<br>    iput(current-&gt;pwd);<br>    current-&gt;pwd=<span class="hljs-literal">NULL</span>;<br>    iput(current-&gt;root);<br>    current-&gt;root=<span class="hljs-literal">NULL</span>;<br>    iput(current-&gt;executable);<br>    current-&gt;executable=<span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">if</span> (current-&gt;leader &amp;&amp; current-&gt;tty &gt;= <span class="hljs-number">0</span>)<br>        tty_table[current-&gt;tty].pgrp = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">if</span> (last_task_used_math == current)<br>        last_task_used_math = <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">if</span> (current-&gt;leader)<br>        kill_session();<br>    current-&gt;state = TASK_ZOMBIE;<br>    <span class="hljs-comment">//进程退出，E代表退出状态</span><br>    fprintk(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;%ld\t%c\t%ld\n&quot;</span>, current-&gt;pid, <span class="hljs-string">&#x27;E&#x27;</span>, jiffies); <br>    current-&gt;exit_code = code;<br>    tell_father(current-&gt;father);<br>    schedule();<br>    <span class="hljs-keyword">return</span> (<span class="hljs-number">-1</span>);<span class="hljs-comment">/* just to suppress warnings */</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sys_exit</span><span class="hljs-params">(<span class="hljs-keyword">int</span> error_code)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">return</span> do_exit((error_code&amp;<span class="hljs-number">0xff</span>)&lt;&lt;<span class="hljs-number">8</span>);<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<h5 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h5><p>Linux 0.11 支持四种进程状态的转移：就绪到运行、运行到就绪、运行到睡眠和睡眠到就绪，此外还有新建和退出两种情况。其中就绪与运行间的状态转移是通过 schedule()（它亦是调度算法所在）完成的；运行到睡眠依靠的是 sleep_on() 和 interruptible_sleep_on()，还有进程主动睡觉的系统调用 sys_pause() 和 sys_waitpid()；睡眠到就绪的转移依靠的是 wake_up()。</p>
+<p>此处应有截图</p>
+<h4 id="调度算法的修改和时间的统计"><a href="#调度算法的修改和时间的统计" class="headerlink" title="调度算法的修改和时间的统计"></a>调度算法的修改和时间的统计</h4><p>调度算法主要完成的步骤在于修改算法的时间片大小，并且验证。</p>
+<p>依次将时间偏设为1，5，10，15，20，25，50，100，150后，经统计分析log文件可以发现：<br>1）在一定的范围内，平均等待时间，平均完成时间的变化随着时间片的增大而减小。这是因为在时间片小的情况下，cpu将时间耗费在调度切换上，所以平均等待时间增加。<br>2）超过一定的范围之后，这些参数将不再有明显的变化，这是因为在这种情况下，RR轮转调度就变成了FCFS先来先服务了。随着时间片的修改，吞吐量始终没有明显的变化，这是因为在单位时间内，系统所能完成的进程数量是不会变的。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/03/14/apache2/apache%E9%85%8D%E7%BD%AE/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">apache2配置</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/02/05/linux%E7%9B%B8%E5%85%B3/%E9%85%8D%E7%BD%AE%E5%B1%80%E5%9F%9F%E7%BD%91%E7%9A%84sock5%E4%BB%A3%E7%90%86/">
+                        <span class="hidden-mobile">配置局域网的sock5代理</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

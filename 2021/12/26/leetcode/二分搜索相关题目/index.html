@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16332675317351633267531725.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="nomanker">
+  <meta name="keywords" content="">
+  
+  <title>二分搜索相关题目 - nomanker&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>nomanker's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16333458334020197ce5b3c0e28a80121b994d6481a.jpg@1280w_1l_2o_100sh.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="二分搜索相关题目">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-26 21:08" pubdate>
+        2021年12月26日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      27
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">二分搜索相关题目</h1>
+            
+            <div class="markdown-body">
+              <p>前言：写了题，但是不写写题解，总感觉自己一天啥也没干，写写题解，也算是给自己留下点成就感吧。</p>
+<h2 id="1-例题"><a href="#1-例题" class="headerlink" title="1. 例题"></a>1. 例题</h2><h3 id="1-搜索旋转排序数组"><a href="#1-搜索旋转排序数组" class="headerlink" title="1. 搜索旋转排序数组"></a>1. 搜索旋转排序数组</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16405242951391640524295112.png" srcset="/img/loading.gif" lazyload alt="leetcode题目"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> l = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> r = nums.length;<br>        <span class="hljs-keyword">while</span>(l&lt;r)&#123;<br>            <span class="hljs-keyword">int</span> mid =(l+r)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(nums[mid]==target) <span class="hljs-keyword">return</span> mid;<br>            <span class="hljs-keyword">if</span>(nums[mid]&lt;=nums[r-<span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-comment">//后半部分有序</span><br>                <span class="hljs-keyword">if</span>(nums[mid]&lt;target&amp;&amp;target&lt;=nums[r-<span class="hljs-number">1</span>])&#123;<br>                    l=mid+<span class="hljs-number">1</span>;<br>                &#125;<span class="hljs-keyword">else</span>&#123;<br>                    r=mid;<br>                &#125;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[r-<span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-comment">//前半部分有序</span><br>                <span class="hljs-keyword">if</span>(nums[l]&lt;=target&amp;&amp;target&lt;nums[mid])&#123;<br>                    r=mid;<br>                &#125;<span class="hljs-keyword">else</span>&#123;<br>                    l=mid+<span class="hljs-number">1</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br></code></pre></td></tr></table></figure>
+<p>感想：本道题目，主要抓住有序和无序的部分进行分解，<strong>有序的部分总是有一点自己的性质</strong>，有序部分，你可以直接根据有序部分的最左边和最右边，直接判断你要的目标值是否有可能在这个有序部分里面，这也是这道题破解的关键所在。</p>
+<p>再者，本道题采用的二分搜索法为左闭右开区间，个人现在对应这个区间的处理，还是处在迷迷糊糊的状态，想要解决，又不知道该如何解决，这是我目前的状态，对于一个算法，如果死抠细节，感觉这个细节是针对于特定题目的，没有通用性，但是我感觉，这应该是有一种较为规范的写法，但是leetcode上面的题解，大部分都是基于左闭右闭的，所以没有较好的参考性。</p>
+<h3 id="2-寻找旋转排序数组中的最小值"><a href="#2-寻找旋转排序数组中的最小值" class="headerlink" title="2. 寻找旋转排序数组中的最小值"></a>2. 寻找旋转排序数组中的最小值</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16405798430021640579842987.png" srcset="/img/loading.gif" lazyload alt="leetcode寻找旋转排序数组中的最小值"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findMin</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> right =nums.length;<br>        <span class="hljs-keyword">while</span>(left&lt;right)&#123;<br>            <span class="hljs-keyword">if</span>(right-left==<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> nums[left];<br>            <span class="hljs-keyword">if</span>(right-left==<span class="hljs-number">2</span>)&#123;<br>                <span class="hljs-keyword">if</span>(nums[right-<span class="hljs-number">1</span>]&gt;nums[left]) <span class="hljs-keyword">return</span> nums[left];<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> nums[right-<span class="hljs-number">1</span>];<br>            &#125;<br>            <span class="hljs-keyword">int</span> mid = (left+right)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(nums[mid]&lt;=nums[right-<span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-comment">//后半部分有序</span><br>                right=mid+<span class="hljs-number">1</span>;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[right-<span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-comment">//前半部分有序</span><br>                left=mid+<span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br></code></pre></td></tr></table></figure>
+<p>首先，这里的代码特别好玩，之前一直想不到怎么解决二分查找的边界问题，二分查找的边界问题，难就难在，你怎么去处理边界条件，确定这个边界条件是十分令人讨厌的，因为对于不同的二分查找，哪里有等号，然后左开右闭的区间和左闭右闭的区间，处理起来的结果是不一样的，导致我们直接写题的时候，虽然理解了思想，但是对于我们写出没有bug的二分查找算法，对于我来说，是一件没有把握的事情，甚至是一件，我改完一个样例的错误，然后我之前的样例就全部都没办法通过，越改越错。然后在昨天晚上的不经意，我发现，其实我大体上采用二分的思想，然后局部，我可以直接判断还有几个元素，如果有两个元素，我是可以直接判断出来的，对于上面这题，如果只有一个元素的话，我是可以直接返回的，所以解决二分搜索的关键所在就是：<strong>整体采用二分搜索，局部采用特殊判断</strong>，应该不能算是局部，其实是直接可以看成边界条件，边界添加不要使用通用的进行判断，因为这样子做，对于我们来说，有点难受，虽然他们确实可以合并在一起，但是对于我们直接写出代码，我想使用我下面的这种办法可以比较有效地帮你解决问题。</p>
+<p>关键代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(right-left==<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> nums[left];<br><span class="hljs-keyword">if</span>(right-left==<span class="hljs-number">2</span>)&#123;<br>    <span class="hljs-keyword">if</span>(nums[right-<span class="hljs-number">1</span>]&gt;nums[left]) <span class="hljs-keyword">return</span> nums[left];<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> nums[right-<span class="hljs-number">1</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>为什么对于两个元素的话，我们需要直接进行特殊处理呢？作为初学者的我，我可以想到的是，对于两个元素，如果进行分割的话，我会陷入，<code>mid</code>和<code>right-1</code>元素的比较，如果是两个元素的话，我们可以发现，<code>mid</code>和<code>right-1</code>进行比较，是我们不希望看到的，因为我们比较这两个没有意义，所以我们只剩下两个元素的时候，我们不必要再去分割，我们是可以直接进行判断从而返回的，这样不会花费额外的时间。</p>
+<h3 id="3-寻找旋转排序数组中的最小值-II"><a href="#3-寻找旋转排序数组中的最小值-II" class="headerlink" title="3. 寻找旋转排序数组中的最小值 II"></a>3. 寻找旋转排序数组中的最小值 II</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16405829188981640582918887.png" srcset="/img/loading.gif" lazyload alt="寻找旋转数组中的最小值2"></p>
+<p>刚想借助上一题的经验来试试水，嘿嘿，这是我试出来的水。。。<br><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16405829575601640582957549.png" srcset="/img/loading.gif" lazyload alt="试水结果"><br>掺不忍赌，而做出这一切的主要目的在于重复性数组带来的两个样例</p>
+<ul>
+<li>$[3,3,3,3,3,3,3,3,1,3]$</li>
+<li>$[5,4,5,5,5,5]$</li>
+</ul>
+<p>先看原本的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findMin</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> left =<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> right =nums.length;<br>        <span class="hljs-keyword">while</span>(left&lt;right)&#123;<br>            <span class="hljs-keyword">if</span>(right-left==<span class="hljs-number">1</span>)&#123;<br>                <span class="hljs-keyword">return</span> nums[left];<br>            &#125;<br>            <span class="hljs-keyword">if</span>(right-left==<span class="hljs-number">2</span>)&#123;<br>                <span class="hljs-keyword">if</span>(nums[left]&gt;=nums[right-<span class="hljs-number">1</span>]) <span class="hljs-keyword">return</span> nums[right-<span class="hljs-number">1</span>];<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> nums[left];<br>            &#125;<br>            <span class="hljs-keyword">int</span> mid =(left+right)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[right-<span class="hljs-number">1</span>])&#123;<br>                left=mid+<span class="hljs-number">1</span>;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&lt;nums[right-<span class="hljs-number">1</span>])&#123;<br>                right=mid+<span class="hljs-number">1</span>;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]==nums[right-<span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[mid-<span class="hljs-number">1</span>])&#123;<br>                    right=mid+<span class="hljs-number">1</span>;<br>                &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&lt;nums[mid-<span class="hljs-number">1</span>])&#123;<br>                    left=mid+<span class="hljs-number">1</span>;<br>                &#125;<span class="hljs-keyword">else</span>&#123;<br>                    <span class="hljs-keyword">if</span>(nums[mid]&lt;nums[mid+<span class="hljs-number">1</span>])&#123;<br>                        right=mid+<span class="hljs-number">1</span>;<br>                    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[mid+<span class="hljs-number">1</span>])&#123;<br>                        left=mid+<span class="hljs-number">1</span>;<br>                    &#125;<span class="hljs-keyword">else</span>&#123;<br>                        <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[left])&#123;<br>                            right=mid+<span class="hljs-number">1</span>;<br>                        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&lt;nums[left])&#123;<br>                            right=mid+<span class="hljs-number">1</span>;<br>                        &#125;<span class="hljs-keyword">else</span>&#123;<br>                            right=mid+<span class="hljs-number">1</span>;<br>                        &#125;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> nums[left];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>和上一题的主要区别在这里</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">if</span>(nums[mid]&lt;nums[mid+<span class="hljs-number">1</span>])&#123;<br>    right=mid+<span class="hljs-number">1</span>;<br>&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[mid+<span class="hljs-number">1</span>])&#123;<br>    left=mid+<span class="hljs-number">1</span>;<br>&#125;<span class="hljs-keyword">else</span>&#123;<br>    <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[left])&#123;<br>        right=mid+<span class="hljs-number">1</span>;<br>    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&lt;nums[left])&#123;<br>        right=mid+<span class="hljs-number">1</span>;<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        right=mid+<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>矛盾处在了最后一个else，我们没办法根据我们的左右，以及最左边和最右边进行边界的缩小，所以我们的算法失败了吗，不是，我们没有失败，因为有重复数字的话，本来就是不存在$log(n)$的解法的，所以我们这边也没有问题，只能说失败了，但是没有完全失败，这边对于相等的情况，我们只能缩小右边界一个位置，然后进行判断，最终代码结果如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findMin</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> left =<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> right =nums.length;<br>        <span class="hljs-keyword">while</span>(left&lt;right)&#123;<br>            <span class="hljs-keyword">if</span>(right-left==<span class="hljs-number">1</span>)&#123;<br>                <span class="hljs-keyword">return</span> nums[left];<br>            &#125;<br>            <span class="hljs-keyword">if</span>(right-left==<span class="hljs-number">2</span>)&#123;<br>                <span class="hljs-keyword">if</span>(nums[left]&gt;=nums[right-<span class="hljs-number">1</span>]) <span class="hljs-keyword">return</span> nums[right-<span class="hljs-number">1</span>];<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> nums[left];<br>            &#125;<br>            <span class="hljs-keyword">int</span> mid =(left+right)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[right-<span class="hljs-number">1</span>])&#123;<br>                left=mid+<span class="hljs-number">1</span>;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&lt;nums[right-<span class="hljs-number">1</span>])&#123;<br>                right=mid+<span class="hljs-number">1</span>;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]==nums[right-<span class="hljs-number">1</span>])&#123;<br>                right--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> nums[left];<br>    &#125;<br></code></pre></td></tr></table></figure>
+<p>完结撒花</p>
+<h3 id="4-Sqrt-x"><a href="#4-Sqrt-x" class="headerlink" title="4. Sqrt(x)"></a>4. Sqrt(x)</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16405897470341640589747023.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
+<p>题解：直接利用二分查找对应的结果，还是利用，如果right-left等于1代表只剩下一个结果，直接进行返回。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">mySqrt</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(x==<span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> left =<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">int</span> right =x;<br>        <span class="hljs-keyword">while</span>(left&lt;right)&#123;<br>            <span class="hljs-keyword">if</span>(right-left==<span class="hljs-number">1</span>)&#123;<br>                <span class="hljs-keyword">return</span> left;<br>            &#125;<br>            <span class="hljs-keyword">int</span> mid = right+(left-right)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(mid==x/mid)&#123;<br>                <span class="hljs-keyword">return</span> mid;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(mid&lt;x/mid)&#123;<br>                left =mid;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(mid&gt;x/mid)&#123;<br>                right=mid;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> left;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="5-山脉数组的峰顶索引"><a href="#5-山脉数组的峰顶索引" class="headerlink" title="5. 山脉数组的峰顶索引"></a>5. 山脉数组的峰顶索引</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16405968380331640596838022.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
+<p>题解：我们仅仅靠左右边界是没有办法确定我们要往哪边缩小，但是我们可以依赖的还有mid的左右，这可以成为我们判断当前在哪个坡的依据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">peakIndexInMountainArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> left =<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> right = arr.length;<br>        <span class="hljs-keyword">while</span>(left&lt;right)&#123;<br>            <span class="hljs-comment">// System.out.println(&quot;left:&quot;+left+&quot; right:&quot;+right);</span><br>            <span class="hljs-keyword">if</span>(right-left==<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> left;<br>            <span class="hljs-keyword">if</span>(right-left==<span class="hljs-number">2</span>)&#123;<br>                <span class="hljs-keyword">if</span>(arr[left]&gt;arr[right-<span class="hljs-number">1</span>]) <span class="hljs-keyword">return</span> left;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> right-<span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-keyword">int</span> mid = (left+right)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(arr[mid]&lt;arr[right-<span class="hljs-number">1</span>])&#123;<br>                left =mid+<span class="hljs-number">1</span>;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(arr[mid]&gt;=arr[right-<span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-keyword">if</span>(arr[mid]&gt;arr[mid+<span class="hljs-number">1</span>])&#123;<br>                    <span class="hljs-comment">//代表在右边</span><br>                    right=mid+<span class="hljs-number">1</span>;<br>                &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(arr[mid]&lt;arr[mid+<span class="hljs-number">1</span>])&#123;<br>                    left=mid+<span class="hljs-number">1</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> left;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E4%BA%8C%E5%88%86%E6%B3%95/">二分法</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/12/26/leetcode/leetcode%E9%A2%98%E8%A7%A3/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">leetcode题解</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/12/24/mit6.851/Advanced-Data-Structures-Project/">
+                        <span class="hidden-mobile">Advanced Data Structures Project</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

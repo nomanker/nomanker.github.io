@@ -1,0 +1,584 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16332675317351633267531725.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="nomanker">
+  <meta name="keywords" content="">
+  
+  <title>计算机网络大体知识 - nomanker&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>nomanker's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16333458334020197ce5b3c0e28a80121b994d6481a.jpg@1280w_1l_2o_100sh.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="计算机网络大体知识">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-11-06 21:50" pubdate>
+        2021年11月6日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      16
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">计算机网络大体知识</h1>
+            
+            <div class="markdown-body">
+              <p>计算机网络基础知识总结</p>
+<p>摘抄自 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/maybe2030/p/4781555.html">[Network] 计算机网络基础知识总结 - Poll的笔记 - 博客园 (cnblogs.com)</a></p>
+<ol>
+<li><h2 id="网络层次划分"><a href="#网络层次划分" class="headerlink" title="网络层次划分"></a>网络层次划分</h2><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16360675903821636067590364.png" srcset="/img/loading.gif" lazyload style="zoom: 67%;" /></p>
+</li>
+<li><h2 id="OSI七层网络模型"><a href="#OSI七层网络模型" class="headerlink" title="OSI七层网络模型"></a>OSI七层网络模型</h2><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16360676659221636067665894.png" srcset="/img/loading.gif" lazyload style="zoom:67%;" /></p>
+<ol>
+<li><p>物理层</p>
+<p>激活，维持，关闭通信端点之间的机械特性，典型特性，功能特性以及过程特性。其主要目的，解决0和1如何从一端到另一端。中继器（也称放大器）和集线器。</p>
+</li>
+<li><p>数据链路层</p>
+<h3 id="数据链路层的三个基本问题"><a href="#数据链路层的三个基本问题" class="headerlink" title="数据链路层的三个基本问题"></a>数据链路层的三个基本问题</h3><p>将物理层传输过来的 0 和 1 ，传输的基本单位是帧。重要的三个重要问题，<strong>封装成帧</strong>，<strong>差错检测</strong>，<strong>可靠传输</strong>。封装成帧，将网络层给的数据包添加帧头和帧尾(FCS)，进行发送，因此基本单位也是帧。传输过程中可能产生误码，因此便需要引入差错检验， MAC 帧在帧尾部 FCS 使用校验码，可以让接收方进行数据的校验。可靠传输，如果接收到的和发送的是一样的，就代表是可靠传输。</p>
+<h3 id="使用广播信道的数据链路层"><a href="#使用广播信道的数据链路层" class="headerlink" title="使用广播信道的数据链路层"></a>使用广播信道的数据链路层</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16360686982301636068698205.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>解决如何判断数据是否是发送给自己的，以及对谁进行回复。</p>
+<p>同时发送消息，怎么解决？<strong>（以太网媒体接入控制协议）CSMA/CD</strong></p>
+<h3 id="交换式局域网"><a href="#交换式局域网" class="headerlink" title="交换式局域网"></a>交换式局域网</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16360688603071636068860292.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" /></p>
+<p>如何转发帧的呢？（<strong>网桥和交换机的工作原理</strong>）</p>
+<h3 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16360692894771636069289454.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>将上层数据转化成为电信号交付给物理层，那么数据链路层如何从物理层交付的比特流中读取一个个的帧？</p>
+<blockquote>
+<p>帧头和帧尾的作用之一<strong>帧定界</strong></p>
+</blockquote>
+<h4 id="面向字节的物理链路"><a href="#面向字节的物理链路" class="headerlink" title="面向字节的物理链路"></a>面向字节的物理链路</h4><p>使用字节填充（SOH和EOT），帧中数据部分采用ESC进行转义</p>
+<h4 id="面向字符的物理链路"><a href="#面向字符的物理链路" class="headerlink" title="面向字符的物理链路"></a>面向字符的物理链路</h4><p>头尾插入 0111 1110 进行帧定界，然后对数据中的每 5 个连续的 1 后面插入一个 0 ，接收者只需要对每连续的 5 个 1 后面删除 一个 0 就可以复原出完成的数据。</p>
+<h4 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h4><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16360700844131636070084395.png" srcset="/img/loading.gif" lazyload style="zoom:67%;" /></p>
+<h5 id="解："><a href="#解：" class="headerlink" title="解："></a>解：</h5><p>因为是面向比特进行的传输，所以每 5 个连续的 1 后面插入一个 0 ，因此 0111 1100 0111 1110 填充之后的结果为 0111 11<strong>0</strong>0  0011 111<strong>0</strong> 10，因此选型为A</p>
+<h3 id="MTU"><a href="#MTU" class="headerlink" title="MTU"></a>MTU</h3><p>为了提高传输的效率，数据的部分应该要比较长，但是为了差错检验的方便，又不能太长，因此规定了最大的传输数据上限大小<strong>MTU</strong>。</p>
+<h3 id="差错检验"><a href="#差错检验" class="headerlink" title="差错检验"></a>差错检验</h3><h4 id="奇偶校验"><a href="#奇偶校验" class="headerlink" title="奇偶校验"></a>奇偶校验</h4><p>添加校验位使得“1”，使得整个数据，包括校验位“1”的个数为 奇数或者偶数。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16360708350511636070835016.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>如果一位出错，可以判断出来，两位的话不可以进行判断。</p>
+<h4 id="循环冗余校验CRC"><a href="#循环冗余校验CRC" class="headerlink" title="循环冗余校验CRC"></a>循环冗余校验CRC</h4><p>待发送的消息为 101001 ,生成的多项式为$G(x)=x^3+x^2+1$ ,计算余数</p>
+<p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16360733250671636073325037.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>余数应该与生成的多项式的最高次数相同，不相同需要进行补0凑够。  001；</p>
+<blockquote>
+<p>检测码只能检测出帧在传输过程中出现了差错，但是不能定位错误，因此没办法纠正错误。</p>
+</blockquote>
+<h3 id="可靠传输的基本概念"><a href="#可靠传输的基本概念" class="headerlink" title="可靠传输的基本概念"></a>可靠传输的基本概念</h3><ol>
+<li>不可靠传输服务 ：直接丢弃该帧</li>
+<li><p>可靠传输服务： 想办法实现发送端发送什么，接收端就接收什么。</p>
+</li>
+<li><p>网络层的 IP 协议向上层提供无连接，不可靠传输服务</p>
+</li>
+<li>传输成的 TCP提供可靠服务，UDP提供不可靠服务</li>
+</ol>
+<h3 id="可靠传输的实现机制"><a href="#可靠传输的实现机制" class="headerlink" title="可靠传输的实现机制"></a>可靠传输的实现机制</h3><ol>
+<li><p>停止等待协议</p>
+<ul>
+<li>确定与否认</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16360746440571636074644040.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" /></p>
+<p>​     <strong>遇到的新问题</strong>： 如此似乎没有什么问题，但是如果DATA在发送到接收方的时候就已经丢失，那么发送方就会一直等待，并且接收方因为没有接收到任何数据，所以并不会给发送方提供任何信息。</p>
+<blockquote>
+<p> 解决办法：超时重传    </p>
+</blockquote>
+<ul>
+<li><p>超时重传    </p>
+<p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16361695006901636169500674.png" srcset="/img/loading.gif" lazyload style="zoom: 67%;" /></p>
+<p>超时重传的时间一般设置为略大于往返时间。</p>
+<p><strong>遇到的问题</strong>：超时重传解决了接收方接收不到数据包的问题，但是也带来了一个新的问题，如果接收方的<em>确认分组</em>没有送到发送方，那么的话，发送方就会发送相同的两个数据包。</p>
+</li>
+<li><p>确认丢失</p>
+<p>确认丢失的话，会造成发送方重复发送相同的DATA，导致接收方接收错误。</p>
+<p>​    <img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16361697921961636169792162.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" /></p>
+<blockquote>
+<p>解决办法：给DATA进行编号，DATA 0，DATA 1这样子</p>
+</blockquote>
+</li>
+<li><p>确认迟到</p>
+<p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16361698338641636169833815.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" /></p>
+<p>发送方，超时重传，然后接收方会发送两条确认，造成发送方对下一条消息的确认。</p>
+<blockquote>
+<p>解决办法：给ACK进行编号，ACK 0，ACK 1这样子</p>
+</blockquote>
+</li>
+<li><p>信道利用率</p>
+<p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16361700225921636170022546.png" srcset="/img/loading.gif" lazyload style="zoom:150%;" /></p>
+<h5 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h5><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16361701969411636170196921.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<script type="math/tex; mode=display">U=\frac{T_D}{T_D+RTT+T_A}=\frac{\frac{x}{3kb/s}}{\frac{x}{3kb/s}+200ms\times2}=40\%</script><p>即 $x=800bit$</p>
+</li>
+</ul>
+<blockquote>
+<p>当发送速率提高，信道利用率大幅度下降，如何解决该问题，敬请期待回退N帧协议和选择重传协议,等待的时候也进行数据包的发送</p>
+</blockquote>
+</li>
+<li><p>回退N帧协议</p>
+<p>​<img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16361720561571636172056071.png" srcset="/img/loading.gif" lazyload alt="图片1"></p>
+<p>​问题：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16361719782701636171978202.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>例题：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16361720875151636172087499.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>解答：</p>
+<p>​        选项C</p>
+<p>​        4，5，6，7号帧，已发送但是未确认。滑动窗口协议</p>
+<blockquote>
+<p>​    通信质量不好的时候，效率比停止等待效率低</p>
+<p>​    造成原因：一个数据分组的误码，会导致后续多个数据分组不能被接收方按序接收而丢弃，尽管他们无乱码和误码。这必然会造成发送方对这些数据分组的超时重传，显然<strong>这是对通信资源的极大浪费</strong>。</p>
+</blockquote>
+</li>
+<li><p>选择重传协议</p>
+<blockquote>
+<p>为了进一步提高性能，可以设法只重传出现误码的数据分组。因此，就收窗口的尺寸$W_R$不应该再等于1（而应大于1），以便先接收下哪些失序到达，但是没有误码并且序号落在接收窗口内的那些数据分组，等所缺的分组收齐以后一并上交上层，这就是选择重传协议</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>网络层</p>
+</li>
+<li><p>传输层</p>
+</li>
+<li><p>应用层</p>
+</li>
+</ol>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/08/leetcode/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%9A%82%E6%97%B6%E4%B8%8D%E5%A4%AA%E6%98%8E%E7%99%BD%E7%9A%84%E9%A2%98%E7%9B%AE/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">动态规划暂时不太明白的题目</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/02/leetcode/left-join%E5%92%8Cright-join%E5%92%8Cjoin%E7%9A%84%E5%8C%BA%E5%88%AB/">
+                        <span class="hidden-mobile">left join和right join和join的区别</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16332675317351633267531725.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="nomanker">
+  <meta name="keywords" content="">
+  
+  <title>leetcode题解 - nomanker&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>nomanker's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16333458334020197ce5b3c0e28a80121b994d6481a.jpg@1280w_1l_2o_100sh.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="leetcode题解">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-12-26 21:29" pubdate>
+        2021年12月26日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      20
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">leetcode题解</h1>
+            
+            <div class="markdown-body">
+              <h2 id="1-例题"><a href="#1-例题" class="headerlink" title="1.例题"></a>1.例题</h2><h3 id="1-两数之和"><a href="#1-两数之和" class="headerlink" title="1.两数之和"></a>1.两数之和</h3><p> <img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16405257547261640525754717.png" srcset="/img/loading.gif" lazyload alt="leetcode题目1"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] twoSum(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) &#123;<br>        <span class="hljs-keyword">int</span>[] ans = &#123;-<span class="hljs-number">1</span>,-<span class="hljs-number">1</span>&#125;;<br>        Map&lt;Integer,Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;Integer,Integer&gt;();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;i&lt;nums.length;i++)&#123;<br>            <span class="hljs-keyword">if</span>(map.get(target-nums[i])!=<span class="hljs-keyword">null</span>)&#123;<br>                ans[<span class="hljs-number">0</span>]=map.get(target-nums[i]);<br>                ans[<span class="hljs-number">1</span>]=i;<br>                <span class="hljs-keyword">return</span> ans;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                map.put(nums[i],i);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br></code></pre></td></tr></table></figure>
+<p>简单的写法，扔一个HashMap遍历一遍可得结果</p>
+<h3 id="2-两个数组的交集"><a href="#2-两个数组的交集" class="headerlink" title="2. 两个数组的交集"></a>2. 两个数组的交集</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16405864196491640586419636.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
+<p>题解：<br>排序，然后双指针遍历，如果数组1的小于数组2，数组1的指针+1，如果数组2的值小于数组1的值，数组2的指针+1，如果相等，存放结果的指针以及数组1和数组2的指针都要向后移动。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] intersect(<span class="hljs-keyword">int</span>[] nums1, <span class="hljs-keyword">int</span>[] nums2) &#123;<br>        <span class="hljs-comment">//放进去两个map    数字几出现几次</span><br>        Arrays.sort(nums1);<br>        Arrays.sort(nums2);<br>        <span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> j =<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span>[] ans = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[Math.min(nums1.length,nums1.length)];<br>        <span class="hljs-keyword">while</span>(i&lt;nums1.length&amp;&amp;j&lt;nums2.length)&#123;<br>            <span class="hljs-keyword">if</span>(nums1[i]&lt;nums2[j])&#123;<br>                i++;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums1[i]&gt;nums2[j])&#123;<br>                j++;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                ans[k]=nums1[i];<br>                i++;<br>                j++;<br>                k++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> Arrays.copyOfRange(ans,<span class="hljs-number">0</span>,k);<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="3-合并两个有序数组"><a href="#3-合并两个有序数组" class="headerlink" title="3.合并两个有序数组"></a>3.合并两个有序数组</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16405866804341640586680420.png" srcset="/img/loading.gif" lazyload alt="合并两个有序数组"></p>
+<p>题解，同样的道理，已经拍完序了，直接双指针，这里的话，类似于求并集，但是不是并集。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums1, <span class="hljs-keyword">int</span> m, <span class="hljs-keyword">int</span>[] nums2, <span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span>[] tmp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[m+n];<br>        <span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> j =<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> p =<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(i&lt;m&amp;&amp;j&lt;n)&#123;<br>            <span class="hljs-keyword">if</span>(nums1[i]&lt;nums2[j]) tmp[p++]=nums1[i++];<br>            <span class="hljs-keyword">else</span> tmp[p++]=nums2[j++];<br>        &#125;<br>        <span class="hljs-keyword">while</span>(i&lt;m)&#123;<br>            tmp[p++]=nums1[i++];<br>        &#125;<br>        <span class="hljs-keyword">while</span>(j&lt;n)&#123;<br>            tmp[p++]=nums2[j++];<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k =<span class="hljs-number">0</span>;k&lt;tmp.length;k++)&#123;<br>            nums1[k]=tmp[k];<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="4-买股票的最佳时机"><a href="#4-买股票的最佳时机" class="headerlink" title="4.买股票的最佳时机"></a>4.买股票的最佳时机</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16405869463021640586946291.png" srcset="/img/loading.gif" lazyload alt="4.买股票的最佳时机"></p>
+<p>题解： 你买股票的时候，只需要知道以前日子最低的价格就行了，这就是最大的利润</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxProfit</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] prices)</span> </span>&#123;<br>      <span class="hljs-keyword">int</span> min =prices[<span class="hljs-number">0</span>];<br>      <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">1</span>;i&lt;prices.length;i++)&#123;<br>          ans = Math.max(prices[i]-min,ans);<br>          min = Math.min(prices[i],min);<br>      &#125;  <br>      <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="5-第N位数字"><a href="#5-第N位数字" class="headerlink" title="5. 第N位数字"></a>5. 第N位数字</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16405955350761640595535066.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
+<p>题解： 就是单纯的模拟，先判断是几位的数，然后再进行定位</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findNthDigit</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>       <span class="hljs-keyword">int</span> num1= <span class="hljs-number">9</span>;<br>       <span class="hljs-keyword">int</span> num2 =<span class="hljs-number">1</span>;<br>       <span class="hljs-keyword">int</span> temp =<span class="hljs-number">0</span>;<br>       List&lt;Integer&gt; ans = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();<br>       ans.add(<span class="hljs-number">0</span>);<br>       <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span> ;i&lt;<span class="hljs-number">8</span>;i++)&#123;<br>           temp+=(num2*num1);<br>           ans.add(temp);<br>           num1*=<span class="hljs-number">10</span>;<br>           num2+=<span class="hljs-number">1</span>;<br>       &#125; <br>       ans.add(Integer.MAX_VALUE);<br>       <span class="hljs-comment">//拿到所有的了</span><br>       <span class="hljs-comment">//先判断在几位数的范围</span><br>       <span class="hljs-keyword">int</span> count =<span class="hljs-number">0</span>;<br>       <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;ans.size();i++)&#123;<br>           <span class="hljs-keyword">if</span>(n&gt;ans.get(i-<span class="hljs-number">1</span>)&amp;&amp;n&lt;=ans.get(i))&#123;<br>               count=i;<br>               <span class="hljs-keyword">break</span>;<br>           &#125;<br>       &#125;<br>       <span class="hljs-comment">//然后把前面无关的全部减掉</span><br>       <span class="hljs-comment">//然后把前面无关的全部减掉</span><br>        n-=ans.get(count-<span class="hljs-number">1</span>);<br>       <span class="hljs-comment">//这时候剩下的结果可以按照位数进行查找</span><br>       <span class="hljs-comment">//对n进行处理</span><br>       n=n-<span class="hljs-number">1</span>;<br><br>       <span class="hljs-keyword">int</span> number=n/count;<span class="hljs-comment">//算出是第几个数</span><br>       <span class="hljs-keyword">int</span> bit = n%count;<span class="hljs-comment">//算出是第几位</span><br>    <span class="hljs-comment">//    System.out.println(number+&quot;  &quot;+bit);</span><br><br>        <span class="hljs-keyword">int</span> base =<span class="hljs-number">1</span>;<br>       <span class="hljs-comment">//找出  count位数的最小值</span><br>       <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">1</span>;i&lt;count;i++)&#123;<br>           base*=<span class="hljs-number">10</span>;<br>       &#125;<br>       <span class="hljs-comment">//拿到我们的具体第几个数</span><br>       n = base+number;<br>       <span class="hljs-comment">//转换成字符</span><br>       <span class="hljs-keyword">return</span> String.valueOf(n).charAt(bit)-<span class="hljs-string">&#x27;0&#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="6-矩阵置0"><a href="#6-矩阵置0" class="headerlink" title="6. 矩阵置0"></a>6. 矩阵置0</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16407555525311640755552513.png" srcset="/img/loading.gif" lazyload alt="矩阵置0题目"></p>
+<p>题解：这道题目看着不难，只需要用一个列数组和行数组表示当前行或者当前列有没有0，然后再遍历一遍，就可以填充了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setZeroes</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] matrix)</span> </span>&#123;<br>        <span class="hljs-comment">//将这些0打标记</span><br>        <span class="hljs-keyword">int</span> m =matrix.length;<br>        <span class="hljs-keyword">int</span> n =matrix[<span class="hljs-number">0</span>].length;<br>        <br>        <span class="hljs-keyword">boolean</span>[] rows = <span class="hljs-keyword">new</span> <span class="hljs-keyword">boolean</span>[m];<br>        <span class="hljs-keyword">boolean</span>[] columns = <span class="hljs-keyword">new</span> <span class="hljs-keyword">boolean</span>[n];<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;m;i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j =<span class="hljs-number">0</span>;j&lt;n;j++)&#123;<br>                <span class="hljs-keyword">if</span>(matrix[i][j]==<span class="hljs-number">0</span>)&#123;<br>                    rows[i]=<span class="hljs-keyword">true</span>;<br>                    columns[j]=<span class="hljs-keyword">true</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br><br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;m;i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;n;j++)&#123;<br>                <span class="hljs-keyword">if</span>(rows[i]||columns[j])&#123;<br>                    matrix[i][j]=<span class="hljs-number">0</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="7-有效的数独"><a href="#7-有效的数独" class="headerlink" title="7. 有效的数独"></a>7. 有效的数独</h3><p><img src="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16407556983611640755698351.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
+<p>题解： 判断每一行，每一列，每一个小方块符不符合要求，注重小方块的代码转换,利用hashSet和count可以判断这里面是不是有重复的数组，有重复的数字，那么set的大小肯定是小于count的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isValidSudoku</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[][] board)</span> </span>&#123;<br>        <span class="hljs-comment">//验证每一行</span><br>        Set&lt;Character&gt; set = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();<br>        <span class="hljs-comment">//验证每一行</span><br>        <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">true</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">9</span>;i++)&#123;<br>            set = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();<br>            <span class="hljs-keyword">int</span> count =<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j =<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">9</span>;j++)&#123;<br>                <span class="hljs-keyword">if</span>(board[i][j]&gt;=<span class="hljs-string">&#x27;1&#x27;</span>&amp;&amp;board[i][j]&lt;=<span class="hljs-string">&#x27;9&#x27;</span>)&#123;<br>                    set.add(board[i][j]);<br>                    count++;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(set.size()!=count) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br><br>        <span class="hljs-comment">//验证每一列</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">9</span>;i++)&#123;<br>            set = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();<br>            <span class="hljs-keyword">int</span> count =<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j =<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">9</span>;j++)&#123;<br>                <span class="hljs-keyword">if</span>(board[j][i]&gt;=<span class="hljs-string">&#x27;1&#x27;</span>&amp;&amp;board[j][i]&lt;=<span class="hljs-string">&#x27;9&#x27;</span>)&#123;<br>                    set.add(board[j][i]);<br>                    count++;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(set.size()!=count) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br>        <span class="hljs-comment">//验证每一个方格</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">3</span>;i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j =<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">3</span>;j++)&#123;<br>                <span class="hljs-comment">//第一个方格</span><br>                set = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();<br>                <span class="hljs-keyword">int</span> count =<span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;k&lt;<span class="hljs-number">3</span>;k++)&#123;<br>                    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> l=<span class="hljs-number">0</span>;l&lt;<span class="hljs-number">3</span>;l++)&#123;<br>                        <span class="hljs-keyword">if</span>(board[i*<span class="hljs-number">3</span>+k][j*<span class="hljs-number">3</span>+l]&gt;=<span class="hljs-string">&#x27;1&#x27;</span>&amp;&amp;board[i*<span class="hljs-number">3</span>+k][j*<span class="hljs-number">3</span>+l]&lt;=<span class="hljs-string">&#x27;9&#x27;</span>)&#123;<br>                            set.add(board[i*<span class="hljs-number">3</span>+k][j*<span class="hljs-number">3</span>+l]);<br>                            count++;<br>                        &#125;<br>                    &#125;<br>                &#125;<br>                <span class="hljs-comment">// System.out.println(set);</span><br>                <span class="hljs-keyword">if</span>(set.size()!=count) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/leetcode%E9%A2%98%E8%A7%A3/">leetcode题解</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/12/28/leetcode/%E7%BB%84%E5%90%88%E6%95%B0%E9%97%AE%E9%A2%98/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">组合数问题</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/12/26/leetcode/%E4%BA%8C%E5%88%86%E6%90%9C%E7%B4%A2%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/">
+                        <span class="hidden-mobile">二分搜索相关题目</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

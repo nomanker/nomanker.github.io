@@ -1,0 +1,815 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16332675317351633267531725.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="nomanker">
+  <meta name="keywords" content="">
+  
+  <title>nomanker&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>nomanker's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/nomanker/images@master/data/16333458334020197ce5b3c0e28a80121b994d6481a.jpg@1280w_1l_2o_100sh.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="nomanker">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%9A%84LR%E6%96%87%E6%B3%95/" target="_self">
+          编译原理的LR文法
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/10/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%9A%84LR%E6%96%87%E6%B3%95/" target="_self">
+          
+          
+            
+          
+          如何正确地识别句柄
+S-&gt;bBB
+LR(0)项目
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-07 14:37" pubdate>
+              2021-10-07
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/04/java%E7%9B%B8%E5%85%B3/%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86/" target="_self">
+          自动装配原理
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/10/04/java%E7%9B%B8%E5%85%B3/%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86/" target="_self">
+          
+          
+            
+          
+          WebMvcAutoConfiguration
+123456789101112131415@Overridepublic void addResourceHandlers(ResourceHandlerRegistry registry) &#123;			if (!this.resourceProperties.isAddMappings()) &#123;				logger.debug(&q
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-04 19:56" pubdate>
+              2021-10-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/SpringBoot/">SpringBoot</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/03/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E7%9F%AD%E8%AF%AD%EF%BC%8C%E7%9B%B4%E6%8E%A5%E7%9F%AD%E8%AF%AD%E5%92%8C%E5%8F%A5%E6%9F%84/" target="_self">
+          短语，直接短语和句柄
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/10/03/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/%E7%9F%AD%E8%AF%AD%EF%BC%8C%E7%9B%B4%E6%8E%A5%E7%9F%AD%E8%AF%AD%E5%92%8C%E5%8F%A5%E6%9F%84/" target="_self">
+          
+          
+            
+          
+          照抄链接:https://www.cnblogs.com/xpwi/p/11066989.html短语:语法树的所有子树
+直接短语：两层节点的子树
+句柄：最左直接短语
+例子如下:
+G[T]:\\
+    T->T*F|F\\
+    F->F\&P|P\\
+    P->(T)|i给定的句型如下:
+T*P\&(T*F)推导步骤为:
+T=>T*F\\
+    =>T*F\&P\\
+    =>T*P
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-03 22:31" pubdate>
+              2021-10-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/03/%E6%9C%89%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98%E7%9B%B8%E5%85%B3/Windows%E5%91%BD%E4%BB%A4/" target="_self">
+          Windows命令
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/10/03/%E6%9C%89%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98%E7%9B%B8%E5%85%B3/Windows%E5%91%BD%E4%BB%A4/" target="_self">
+          
+          
+            
+          
+          Windows中杀死占用某个端口的进程
+
+解除8080端口的占用
+1netstat -ano |findstr 8080   //列出端口所占用的进程号
+
+根据进程号找相应的进程名称
+
+
+1tasklist |findstr 2000
+
+根据进程号删除对应的进程
+
+1taskkill -PID &lt;进程号&gt; -F //强制关闭某个进程
+windows 设置终端代理
+
+打开环境变量
+新建两
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-03 21:15" pubdate>
+              2021-10-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/windows%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88/">windows命令集合</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/03/java%E7%9B%B8%E5%85%B3/SpringBoot1/" target="_self">
+          SpringBoot1
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/10/03/java%E7%9B%B8%E5%85%B3/SpringBoot1/" target="_self">
+          
+          
+            
+          
+          
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-03 21:01" pubdate>
+              2021-10-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/SpringBoot/">SpringBoot</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/27/java%E7%9B%B8%E5%85%B3/ajax%E4%B8%8D%E5%93%8D%E5%BA%94%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8E%9F%E5%9B%A0/" target="_self">
+          ajaxsucces不响应的一些原因
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/27/java%E7%9B%B8%E5%85%B3/ajax%E4%B8%8D%E5%93%8D%E5%BA%94%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8E%9F%E5%9B%A0/" target="_self">
+          
+          
+            
+          
+          后端设置了传回数据为json，但是ajax看到数据是json然后就不进行解析。emm不知道咋回事
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-27 21:57" pubdate>
+              2021-09-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">学习之路</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/27/java%E7%9B%B8%E5%85%B3/SpringMVC404%E4%B8%80%E4%BA%9B%E5%8E%9F%E5%9B%A0/" target="_self">
+          SpringMVC404一些原因
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/27/java%E7%9B%B8%E5%85%B3/SpringMVC404%E4%B8%80%E4%BA%9B%E5%8E%9F%E5%9B%A0/" target="_self">
+          
+          
+            
+          
+          一些基本原因：
+
+依赖库没有放到web的lib库当中，导致SpringMVC的Dispatch总分配器不能加载。
+这边的RequestMapping没有放在方法的前面，emm，估计是脑袋瓜晕乎乎了&lt;/br&gt;
+
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-27 19:51" pubdate>
+              2021-09-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/java/">java</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/20/java%E7%9B%B8%E5%85%B3/SpringMVC%E7%9A%84%E5%85%A5%E9%97%A8%E9%85%8D%E7%BD%AE/" target="_self">
+          SpringMVC的入门配置
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/20/java%E7%9B%B8%E5%85%B3/SpringMVC%E7%9A%84%E5%85%A5%E9%97%A8%E9%85%8D%E7%BD%AE/" target="_self">
+          
+          
+            
+          
+          SpringMVC的职权分配:
+Controller:
+
+取得表单数据
+调用业务逻辑
+转向指定的页面
+
+Model:
+
+业务逻辑
+保存数据的状态
+
+View：
+
+显示页面
+
+原理图如下所示
+
+执行流程解释
+
+DispatcherServlet表示前置控制器，是整个SpringMVC的控制中心。用户发出请求，DispatcherServlet接收请求并拦截请求。我们假设请求的url为 : http:
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-20 22:08" pubdate>
+              2021-09-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/java/">java</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/20/leetcode/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%80%E5%8D%95%E9%A2%98/" target="_self">
+          动态规划简单题
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/20/leetcode/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%80%E5%8D%95%E9%A2%98/" target="_self">
+          
+          
+            
+          
+          
+123456789101112class Solution &#123;    public int minCostClimbingStairs(int[] cost) &#123;        int down=0;        int downdown=0;        for(int i=2;i&lt;=cost.length;i++)&#123;            int an
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-20 21:20" pubdate>
+              2021-09-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/leetcode/">leetcode</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/20/java%E7%9B%B8%E5%85%B3/MybatisPlus%E9%85%8D%E7%BD%AE/" target="_self">
+          MybatisPlus配置
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/20/java%E7%9B%B8%E5%85%B3/MybatisPlus%E9%85%8D%E7%BD%AE/" target="_self">
+          
+          
+            
+          
+          csdn学习笔记
+
+Mybatis plus学习笔记
+
+创建springboot应用
+添加SQL中的Mybatis Famework
+
+进入项目，添加mybatis-plus依赖123456789101112&lt;!-- mybatis-plus --&gt;&lt;dependency&gt;	&lt;groupId&gt;com.baomidou&lt;/groupId&gt;	&lt;ar
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-20 15:01" pubdate>
+              2021-09-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/java/">java</a>
+            
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#board">6</a><a class="page-number" href="/page/7/#board">7</a><a class="page-number" href="/page/8/#board">8</a><a class="extend next" rel="next" href="/page/6/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
